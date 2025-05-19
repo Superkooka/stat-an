@@ -28,8 +28,10 @@ services:
 
   stat-an-postgres:
     image: postgres:17.5
+    ports:
+      - 5432:5432
     volumes:
-      - ./docker/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d:rw,cached
+      - ./docker/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d:rw,cached
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
