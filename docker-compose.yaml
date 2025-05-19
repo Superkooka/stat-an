@@ -1,0 +1,41 @@
+services:
+  stat-an-nginx:
+    image: nginx:1.27.5
+    ports:
+      - '8080:80'
+    links:
+      - stat-an-api
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:rw,cached
+      - ./docker/nginx/bucket-size.conf:/etc/nginx/conf.d/bucket-size.conf:rw,cached
+      - ./public:/var/www/public:rw,cached
+    networks:
+      - stat-an
+
+  stat-an-api:
+    image: stat-an:dev
+    user: 1000:1000
+    env_file:
+      -  .env
+    volumes:
+      - ./:/var/www:rw,cached
+      - ./docker/php-fpm/ini/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini:rw,cached
+      - ./docker/php-fpm/ini/local.ini:/usr/local/etc/php/conf.d/local.ini:rw,cached
+    networks:
+      - stat-an
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+  stat-an-postgres:
+    image: postgres:17.5
+    volumes:
+      - ./docker/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d:rw,cached
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - stat-an
+
+networks:
+  stat-an:
+    driver: bridge

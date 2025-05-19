@@ -1,0 +1,1 @@
+CREATE DATABASE stat_an;
