@@ -16,9 +16,30 @@ services:
     App\:
         resource: '../src/'
         exclude:
-            - '../src/DependencyInjection/'
-            - '../src/Entity/'
+            - '../src/Domain'
+            - '../src/Infrastructure/Persistence/Mapping'
+            - '../src/Application/ReadModel'
             - '../src/Kernel.php'
+
+    App\Application\UseCase\:
+        resource: '../src/Application/UseCase'
+        exclude:
+            - '../src/Application/UseCase/**/*Request.php'
+            - '../src/Application/UseCase/**/*Context.php'
+        public: true
+
+    League\Tactician\Handler\Locator\HandlerLocator: '@App\Application\CommandBus\ContainerCommandHandlerLocator'
+
+    App\Infrastructure\CommandBus\CommandBusCaller: '@App\Infrastructure\CommandBus\UnmanagedErrorsCommandBusCaller'
+
+    command_handler:
+        class: League\Tactician\Handler\CommandHandlerMiddleware
+        arguments:
+            $commandNameExtractor: '@tactician.handler.command_name_extractor.class_name'
+            $handlerLocator: '@App\Application\CommandBus\ContainerCommandHandlerLocator'
+            $methodNameInflector: '@tactician.handler.method_name_inflector.handle'
+
+    Psr\Container\ContainerInterface: '@service_container'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

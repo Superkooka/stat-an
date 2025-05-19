@@ -23,11 +23,17 @@ doctrine:
             Doctrine\DBAL\Platforms\PostgreSQLPlatform: identity
         auto_mapping: true
         mappings:
-            App:
-                type: attribute
+            App\Domain\Entity:
+                type: php
+                dir: '%kernel.project_dir%/src/Infrastructure/Persistence/Mapping'
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
+                prefix: App\Domain\Entity
+                alias: App
+            App\Application\ReadModel:
+                type: php
+                dir: '%kernel.project_dir%/src/Infrastructure/Persistence/Mapping'
+                is_bundle: false
+                prefix: App\Application\ReadModel
                 alias: App
         controller_resolver:
             auto_mapping: false
