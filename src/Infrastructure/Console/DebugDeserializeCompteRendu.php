@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Infrastructure\Console;
 
 use App\Application\UseCase\DeserializeCompteRenduANRequest;
@@ -14,8 +16,7 @@ class DebugDeserializeCompteRendu extends Command
 {
     public function __construct(
         private readonly CommandBusCaller $commandBusCaller,
-    )
-    {
+    ) {
         parent::__construct();
     }
 

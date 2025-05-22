@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Application\UseCase;
 
-use App\Application\NationalAssemblyDTO\Seance;
+use App\Application\AssembleeNationale\Seance;
 use Symfony\Component\Serializer\SerializerInterface;
 
 class DeserializeCompteRenduAN
@@ -10,7 +12,6 @@ class DeserializeCompteRenduAN
     public function __construct(
         private readonly SerializerInterface $serializer
     ) {
-
     }
 
     public function handle(DeserializeCompteRenduANRequest $request): void

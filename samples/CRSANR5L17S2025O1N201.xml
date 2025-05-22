@@ -260,7 +260,14 @@
         </interExtraction>
       </point>
       <point nivpoint="4" structure="Oui" valeur_ptsodj="1" ordinal_prise="1" id_preparation="2697011" ordre_absolu_seance="25" id_acteur="PA330008" id_mandat="PM842366" id_nomination_oe="0" id_nomination_op="PM846636" orateur="" code_grammaire="DISC_ARTICLES_3_40" code_parole="" sommaire="1" id_syceron="3748389" valeur=" 1257, 1256 et 496" bibard=" (n[[o]] 1364)" art=" 3" adt=" 389" ssadt="">
-        <interExtraction nom_orateur="Mme Brigitte Liso" qualite="rapporteure" id_acteur="PA720446" id_nomination_oe="-1" id_nomination_op="-2529285" id_mandat="PM843095">
+        <interExtraction
+                nom_orateur="Mme Brigitte Liso"
+                qualite="rapporteure"
+                id_acteur="PA720446"
+                id_nomination_oe="-1"
+                id_nomination_op="-2529285"
+                id_mandat="PM843095"
+        >
           <paragraphe valeur_ptsodj="1" ordinal_prise="1" id_preparation="2697011" ordre_absolu_seance="25" id_acteur="PA330008" id_mandat="PM842366" id_nomination_oe="0" id_nomination_op="PM846636" code_grammaire="DISC_ARTICLES_3_40" code_style="NORMAL" code_parole="" sommaire="1" id_syceron="3748389" valeur=" 1257, 1256 et 496" bibard=" (n[[o]] 1364)" art=" 3" adt=" 389" ssadt="" roledebat="president">
             <orateurs>
               <orateur>
@@ -1705,7 +1712,21 @@
         </orateurs>
         <texte stime="4907.34">Les critères détaillés dans l’article 4 sont justement ceux qui permettent une évaluation objective et qui garantissent l’égalité de tous face à la fin de vie.<italique> (Applaudissements sur quelques bancs du groupe LFI-NFP.</italique> <italique>– Mmes Sandrine</italique><italique> Rousseau</italique><italique> et</italique><italique> Karine</italique><italique> Lebon</italique><italique> applaudissent</italique> <italique>également.)</italique></texte>
       </paragraphe>
-      <paragraphe valeur_ptsodj="1" ordinal_prise="5" id_preparation="2697123" ordre_absolu_seance="261" id_acteur="PA330008" id_mandat="PM842366" id_nomination_oe="0" id_nomination_op="PM846636" code_grammaire="PAROLE_GENERIQUE" code_style="NORMAL" code_parole="" sommaire="0" id_syceron="3749096" valeur="">
+      <paragraphe
+              valeur_ptsodj="1"
+              ordinal_prise="5"
+              id_preparation="2697123"
+              ordre_absolu_seance="261"
+              id_acteur="PA330008"
+              id_mandat="PM842366"
+              id_nomination_oe="0"
+              id_nomination_op="PM846636"
+              code_grammaire="PAROLE_GENERIQUE"
+              code_style="NORMAL"
+              code_parole=""
+              sommaire="0"
+              id_syceron="3749096"
+              valeur="">
         <orateurs>
           <orateur>
             <nom>M. le président</nom>
